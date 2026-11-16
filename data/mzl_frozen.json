@@ -1,0 +1,1282 @@
+{
+ "params": {
+  "umax": 0.5,
+  "s1": 5.0,
+  "s2": 5.0,
+  "n_starts": 500,
+  "seed": 716,
+  "terminal": "lqr1",
+  "T_loop": 150,
+  "T_term": 80
+ },
+ "costs": {
+  "q_i_r01": [
+   {
+    "N": 1,
+    "starts": 500,
+    "in_c": 265,
+    "nicht_in_c": 235,
+    "faelle": 237,
+    "faelle_aussen": 235,
+    "faelle_innen": 2,
+    "austritt": 2,
+    "konvergiert": 0,
+    "randlauf": 0,
+    "ende": 263
+   },
+   {
+    "N": 2,
+    "starts": 500,
+    "in_c": 349,
+    "nicht_in_c": 151,
+    "faelle": 151,
+    "faelle_aussen": 151,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "konvergiert": 349,
+    "randlauf": 0,
+    "ende": 0
+   },
+   {
+    "N": 3,
+    "starts": 500,
+    "in_c": 440,
+    "nicht_in_c": 60,
+    "faelle": 60,
+    "faelle_aussen": 60,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "konvergiert": 440,
+    "randlauf": 0,
+    "ende": 0
+   },
+   {
+    "N": 4,
+    "starts": 500,
+    "in_c": 486,
+    "nicht_in_c": 14,
+    "faelle": 14,
+    "faelle_aussen": 14,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "konvergiert": 486,
+    "randlauf": 0,
+    "ende": 0
+   },
+   {
+    "N": 5,
+    "starts": 500,
+    "in_c": 497,
+    "nicht_in_c": 3,
+    "faelle": 3,
+    "faelle_aussen": 3,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "konvergiert": 497,
+    "randlauf": 0,
+    "ende": 0
+   },
+   {
+    "N": 6,
+    "starts": 500,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "konvergiert": 500,
+    "randlauf": 0,
+    "ende": 0
+   },
+   {
+    "N": 7,
+    "starts": 500,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "konvergiert": 500,
+    "randlauf": 0,
+    "ende": 0
+   },
+   {
+    "N": 8,
+    "starts": 500,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "konvergiert": 500,
+    "randlauf": 0,
+    "ende": 0
+   }
+  ],
+  "q_i_r10": [
+   {
+    "N": 1,
+    "starts": 500,
+    "in_c": 265,
+    "nicht_in_c": 235,
+    "faelle": 436,
+    "faelle_aussen": 235,
+    "faelle_innen": 201,
+    "austritt": 201,
+    "konvergiert": 0,
+    "randlauf": 0,
+    "ende": 64
+   },
+   {
+    "N": 2,
+    "starts": 500,
+    "in_c": 349,
+    "nicht_in_c": 151,
+    "faelle": 151,
+    "faelle_aussen": 151,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "konvergiert": 349,
+    "randlauf": 0,
+    "ende": 0
+   },
+   {
+    "N": 3,
+    "starts": 500,
+    "in_c": 440,
+    "nicht_in_c": 60,
+    "faelle": 60,
+    "faelle_aussen": 60,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "konvergiert": 440,
+    "randlauf": 0,
+    "ende": 0
+   },
+   {
+    "N": 4,
+    "starts": 500,
+    "in_c": 486,
+    "nicht_in_c": 14,
+    "faelle": 14,
+    "faelle_aussen": 14,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "konvergiert": 486,
+    "randlauf": 0,
+    "ende": 0
+   },
+   {
+    "N": 5,
+    "starts": 500,
+    "in_c": 497,
+    "nicht_in_c": 3,
+    "faelle": 3,
+    "faelle_aussen": 3,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "konvergiert": 497,
+    "randlauf": 0,
+    "ende": 0
+   },
+   {
+    "N": 6,
+    "starts": 500,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "konvergiert": 500,
+    "randlauf": 0,
+    "ende": 0
+   },
+   {
+    "N": 7,
+    "starts": 500,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "konvergiert": 500,
+    "randlauf": 0,
+    "ende": 0
+   },
+   {
+    "N": 8,
+    "starts": 500,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "konvergiert": 500,
+    "randlauf": 0,
+    "ende": 0
+   }
+  ],
+  "pos": [
+   {
+    "N": 1,
+    "starts": 500,
+    "in_c": 265,
+    "nicht_in_c": 235,
+    "faelle": 495,
+    "faelle_aussen": 235,
+    "faelle_innen": 260,
+    "austritt": 260,
+    "konvergiert": 0,
+    "randlauf": 0,
+    "ende": 5
+   },
+   {
+    "N": 2,
+    "starts": 500,
+    "in_c": 349,
+    "nicht_in_c": 151,
+    "faelle": 151,
+    "faelle_aussen": 151,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "konvergiert": 349,
+    "randlauf": 0,
+    "ende": 0
+   },
+   {
+    "N": 3,
+    "starts": 500,
+    "in_c": 440,
+    "nicht_in_c": 60,
+    "faelle": 60,
+    "faelle_aussen": 60,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "konvergiert": 440,
+    "randlauf": 0,
+    "ende": 0
+   },
+   {
+    "N": 4,
+    "starts": 500,
+    "in_c": 486,
+    "nicht_in_c": 14,
+    "faelle": 14,
+    "faelle_aussen": 14,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "konvergiert": 486,
+    "randlauf": 0,
+    "ende": 0
+   },
+   {
+    "N": 5,
+    "starts": 500,
+    "in_c": 497,
+    "nicht_in_c": 3,
+    "faelle": 3,
+    "faelle_aussen": 3,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "konvergiert": 497,
+    "randlauf": 0,
+    "ende": 0
+   },
+   {
+    "N": 6,
+    "starts": 500,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "konvergiert": 500,
+    "randlauf": 0,
+    "ende": 0
+   },
+   {
+    "N": 7,
+    "starts": 500,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "konvergiert": 500,
+    "randlauf": 0,
+    "ende": 0
+   },
+   {
+    "N": 8,
+    "starts": 500,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "konvergiert": 500,
+    "randlauf": 0,
+    "ende": 0
+   }
+  ],
+  "stell": [
+   {
+    "N": 1,
+    "starts": 500,
+    "in_c": 265,
+    "nicht_in_c": 235,
+    "faelle": 495,
+    "faelle_aussen": 235,
+    "faelle_innen": 260,
+    "austritt": 260,
+    "konvergiert": 0,
+    "randlauf": 0,
+    "ende": 5
+   },
+   {
+    "N": 2,
+    "starts": 500,
+    "in_c": 349,
+    "nicht_in_c": 151,
+    "faelle": 379,
+    "faelle_aussen": 151,
+    "faelle_innen": 228,
+    "austritt": 228,
+    "konvergiert": 0,
+    "randlauf": 105,
+    "ende": 16
+   },
+   {
+    "N": 3,
+    "starts": 500,
+    "in_c": 440,
+    "nicht_in_c": 60,
+    "faelle": 162,
+    "faelle_aussen": 60,
+    "faelle_innen": 102,
+    "austritt": 102,
+    "konvergiert": 0,
+    "randlauf": 281,
+    "ende": 57
+   },
+   {
+    "N": 4,
+    "starts": 500,
+    "in_c": 486,
+    "nicht_in_c": 14,
+    "faelle": 32,
+    "faelle_aussen": 14,
+    "faelle_innen": 18,
+    "austritt": 18,
+    "konvergiert": 0,
+    "randlauf": 389,
+    "ende": 79
+   },
+   {
+    "N": 5,
+    "starts": 500,
+    "in_c": 497,
+    "nicht_in_c": 3,
+    "faelle": 3,
+    "faelle_aussen": 3,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "konvergiert": 0,
+    "randlauf": 411,
+    "ende": 86
+   },
+   {
+    "N": 6,
+    "starts": 500,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "konvergiert": 0,
+    "randlauf": 431,
+    "ende": 69
+   },
+   {
+    "N": 7,
+    "starts": 500,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "konvergiert": 0,
+    "randlauf": 401,
+    "ende": 99
+   },
+   {
+    "N": 8,
+    "starts": 500,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "konvergiert": 0,
+    "randlauf": 414,
+    "ende": 86
+   }
+  ],
+  "grenze": [
+   {
+    "N": 1,
+    "starts": 500,
+    "in_c": 265,
+    "nicht_in_c": 235,
+    "faelle": 495,
+    "faelle_aussen": 235,
+    "faelle_innen": 260,
+    "austritt": 260,
+    "konvergiert": 0,
+    "randlauf": 0,
+    "ende": 5
+   },
+   {
+    "N": 2,
+    "starts": 500,
+    "in_c": 349,
+    "nicht_in_c": 151,
+    "faelle": 491,
+    "faelle_aussen": 151,
+    "faelle_innen": 340,
+    "austritt": 340,
+    "konvergiert": 0,
+    "randlauf": 9,
+    "ende": 0
+   },
+   {
+    "N": 3,
+    "starts": 500,
+    "in_c": 440,
+    "nicht_in_c": 60,
+    "faelle": 383,
+    "faelle_aussen": 60,
+    "faelle_innen": 323,
+    "austritt": 323,
+    "konvergiert": 0,
+    "randlauf": 114,
+    "ende": 3
+   },
+   {
+    "N": 4,
+    "starts": 500,
+    "in_c": 486,
+    "nicht_in_c": 14,
+    "faelle": 223,
+    "faelle_aussen": 14,
+    "faelle_innen": 209,
+    "austritt": 209,
+    "konvergiert": 0,
+    "randlauf": 277,
+    "ende": 0
+   },
+   {
+    "N": 5,
+    "starts": 500,
+    "in_c": 497,
+    "nicht_in_c": 3,
+    "faelle": 51,
+    "faelle_aussen": 3,
+    "faelle_innen": 48,
+    "austritt": 48,
+    "konvergiert": 0,
+    "randlauf": 449,
+    "ende": 0
+   },
+   {
+    "N": 6,
+    "starts": 500,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle": 2,
+    "faelle_aussen": 0,
+    "faelle_innen": 2,
+    "austritt": 2,
+    "konvergiert": 0,
+    "randlauf": 498,
+    "ende": 0
+   },
+   {
+    "N": 7,
+    "starts": 500,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "konvergiert": 0,
+    "randlauf": 500,
+    "ende": 0
+   },
+   {
+    "N": 8,
+    "starts": 500,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "konvergiert": 0,
+    "randlauf": 500,
+    "ende": 0
+   }
+  ]
+ },
+ "terminal": [
+  {
+   "N": 1,
+   "starts": 500,
+   "faelle": 0,
+   "konvergiert": 500,
+   "randlauf": 0,
+   "ende": 0,
+   "wert_verletzt": 0
+  },
+  {
+   "N": 2,
+   "starts": 500,
+   "faelle": 0,
+   "konvergiert": 500,
+   "randlauf": 0,
+   "ende": 0,
+   "wert_verletzt": 0
+  },
+  {
+   "N": 3,
+   "starts": 500,
+   "faelle": 0,
+   "konvergiert": 500,
+   "randlauf": 0,
+   "ende": 0,
+   "wert_verletzt": 0
+  },
+  {
+   "N": 4,
+   "starts": 500,
+   "faelle": 0,
+   "konvergiert": 500,
+   "randlauf": 0,
+   "ende": 0,
+   "wert_verletzt": 0
+  },
+  {
+   "N": 5,
+   "starts": 500,
+   "faelle": 0,
+   "konvergiert": 500,
+   "randlauf": 0,
+   "ende": 0,
+   "wert_verletzt": 0
+  },
+  {
+   "N": 6,
+   "starts": 500,
+   "faelle": 0,
+   "konvergiert": 500,
+   "randlauf": 0,
+   "ende": 0,
+   "wert_verletzt": 0
+  },
+  {
+   "N": 7,
+   "starts": 500,
+   "faelle": 0,
+   "konvergiert": 500,
+   "randlauf": 0,
+   "ende": 0,
+   "wert_verletzt": 0
+  },
+  {
+   "N": 8,
+   "starts": 500,
+   "faelle": 0,
+   "konvergiert": 500,
+   "randlauf": 0,
+   "ende": 0,
+   "wert_verletzt": 0
+  },
+  {
+   "N": 9,
+   "starts": 500,
+   "faelle": 0,
+   "konvergiert": 500,
+   "randlauf": 0,
+   "ende": 0,
+   "wert_verletzt": 0
+  },
+  {
+   "N": 10,
+   "starts": 500,
+   "faelle": 0,
+   "konvergiert": 500,
+   "randlauf": 0,
+   "ende": 0,
+   "wert_verletzt": 0
+  }
+ ],
+ "seeds": {
+  "grenze:5": [
+   {
+    "seed": 716,
+    "in_c": 497,
+    "nicht_in_c": 3,
+    "faelle_aussen": 3,
+    "faelle_innen": 48,
+    "austritt": 48,
+    "randlauf": 449
+   },
+   {
+    "seed": 717,
+    "in_c": 494,
+    "nicht_in_c": 6,
+    "faelle_aussen": 6,
+    "faelle_innen": 65,
+    "austritt": 65,
+    "randlauf": 429
+   },
+   {
+    "seed": 718,
+    "in_c": 494,
+    "nicht_in_c": 6,
+    "faelle_aussen": 6,
+    "faelle_innen": 79,
+    "austritt": 79,
+    "randlauf": 415
+   },
+   {
+    "seed": 719,
+    "in_c": 498,
+    "nicht_in_c": 2,
+    "faelle_aussen": 2,
+    "faelle_innen": 62,
+    "austritt": 62,
+    "randlauf": 436
+   },
+   {
+    "seed": 720,
+    "in_c": 497,
+    "nicht_in_c": 3,
+    "faelle_aussen": 3,
+    "faelle_innen": 61,
+    "austritt": 61,
+    "randlauf": 436
+   },
+   {
+    "seed": 721,
+    "in_c": 498,
+    "nicht_in_c": 2,
+    "faelle_aussen": 2,
+    "faelle_innen": 59,
+    "austritt": 59,
+    "randlauf": 439
+   },
+   {
+    "seed": 722,
+    "in_c": 495,
+    "nicht_in_c": 5,
+    "faelle_aussen": 5,
+    "faelle_innen": 53,
+    "austritt": 53,
+    "randlauf": 442
+   },
+   {
+    "seed": 723,
+    "in_c": 498,
+    "nicht_in_c": 2,
+    "faelle_aussen": 2,
+    "faelle_innen": 61,
+    "austritt": 61,
+    "randlauf": 437
+   },
+   {
+    "seed": 724,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 61,
+    "austritt": 61,
+    "randlauf": 438
+   },
+   {
+    "seed": 725,
+    "in_c": 498,
+    "nicht_in_c": 2,
+    "faelle_aussen": 2,
+    "faelle_innen": 57,
+    "austritt": 57,
+    "randlauf": 441
+   }
+  ],
+  "grenze:6": [
+   {
+    "seed": 716,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 2,
+    "austritt": 2,
+    "randlauf": 498
+   },
+   {
+    "seed": 717,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 2,
+    "austritt": 2,
+    "randlauf": 498
+   },
+   {
+    "seed": 718,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 1,
+    "austritt": 1,
+    "randlauf": 499
+   },
+   {
+    "seed": 719,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 500
+   },
+   {
+    "seed": 720,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 3,
+    "austritt": 3,
+    "randlauf": 497
+   },
+   {
+    "seed": 721,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 2,
+    "austritt": 2,
+    "randlauf": 498
+   },
+   {
+    "seed": 722,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 1,
+    "austritt": 1,
+    "randlauf": 499
+   },
+   {
+    "seed": 723,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 1,
+    "austritt": 1,
+    "randlauf": 499
+   },
+   {
+    "seed": 724,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 1,
+    "austritt": 1,
+    "randlauf": 499
+   },
+   {
+    "seed": 725,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 1,
+    "austritt": 1,
+    "randlauf": 499
+   }
+  ],
+  "grenze:7": [
+   {
+    "seed": 716,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 500
+   },
+   {
+    "seed": 717,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 500
+   },
+   {
+    "seed": 718,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 500
+   },
+   {
+    "seed": 719,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 500
+   },
+   {
+    "seed": 720,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 500
+   },
+   {
+    "seed": 721,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 500
+   },
+   {
+    "seed": 722,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 500
+   },
+   {
+    "seed": 723,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 500
+   },
+   {
+    "seed": 724,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 500
+   },
+   {
+    "seed": 725,
+    "in_c": 500,
+    "nicht_in_c": 0,
+    "faelle_aussen": 0,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 500
+   }
+  ],
+  "q_i_r10:2": [
+   {
+    "seed": 716,
+    "in_c": 349,
+    "nicht_in_c": 151,
+    "faelle_aussen": 151,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 717,
+    "in_c": 346,
+    "nicht_in_c": 154,
+    "faelle_aussen": 154,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 718,
+    "in_c": 352,
+    "nicht_in_c": 148,
+    "faelle_aussen": 148,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 719,
+    "in_c": 333,
+    "nicht_in_c": 167,
+    "faelle_aussen": 167,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 720,
+    "in_c": 348,
+    "nicht_in_c": 152,
+    "faelle_aussen": 152,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 721,
+    "in_c": 347,
+    "nicht_in_c": 153,
+    "faelle_aussen": 153,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 722,
+    "in_c": 349,
+    "nicht_in_c": 151,
+    "faelle_aussen": 151,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 723,
+    "in_c": 350,
+    "nicht_in_c": 150,
+    "faelle_aussen": 150,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 724,
+    "in_c": 326,
+    "nicht_in_c": 174,
+    "faelle_aussen": 174,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 725,
+    "in_c": 334,
+    "nicht_in_c": 166,
+    "faelle_aussen": 166,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   }
+  ],
+  "q_i_r10:3": [
+   {
+    "seed": 716,
+    "in_c": 440,
+    "nicht_in_c": 60,
+    "faelle_aussen": 60,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 717,
+    "in_c": 433,
+    "nicht_in_c": 67,
+    "faelle_aussen": 67,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 718,
+    "in_c": 441,
+    "nicht_in_c": 59,
+    "faelle_aussen": 59,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 719,
+    "in_c": 436,
+    "nicht_in_c": 64,
+    "faelle_aussen": 64,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 720,
+    "in_c": 434,
+    "nicht_in_c": 66,
+    "faelle_aussen": 66,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 721,
+    "in_c": 440,
+    "nicht_in_c": 60,
+    "faelle_aussen": 60,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 722,
+    "in_c": 437,
+    "nicht_in_c": 63,
+    "faelle_aussen": 63,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 723,
+    "in_c": 437,
+    "nicht_in_c": 63,
+    "faelle_aussen": 63,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 724,
+    "in_c": 427,
+    "nicht_in_c": 73,
+    "faelle_aussen": 73,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 725,
+    "in_c": 429,
+    "nicht_in_c": 71,
+    "faelle_aussen": 71,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   }
+  ],
+  "pos:2": [
+   {
+    "seed": 716,
+    "in_c": 349,
+    "nicht_in_c": 151,
+    "faelle_aussen": 151,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 717,
+    "in_c": 346,
+    "nicht_in_c": 154,
+    "faelle_aussen": 154,
+    "faelle_innen": 1,
+    "austritt": 1,
+    "randlauf": 0
+   },
+   {
+    "seed": 718,
+    "in_c": 352,
+    "nicht_in_c": 148,
+    "faelle_aussen": 148,
+    "faelle_innen": 1,
+    "austritt": 1,
+    "randlauf": 0
+   },
+   {
+    "seed": 719,
+    "in_c": 333,
+    "nicht_in_c": 167,
+    "faelle_aussen": 167,
+    "faelle_innen": 1,
+    "austritt": 1,
+    "randlauf": 0
+   },
+   {
+    "seed": 720,
+    "in_c": 348,
+    "nicht_in_c": 152,
+    "faelle_aussen": 152,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 721,
+    "in_c": 347,
+    "nicht_in_c": 153,
+    "faelle_aussen": 153,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 722,
+    "in_c": 349,
+    "nicht_in_c": 151,
+    "faelle_aussen": 151,
+    "faelle_innen": 4,
+    "austritt": 4,
+    "randlauf": 0
+   },
+   {
+    "seed": 723,
+    "in_c": 350,
+    "nicht_in_c": 150,
+    "faelle_aussen": 150,
+    "faelle_innen": 1,
+    "austritt": 1,
+    "randlauf": 0
+   },
+   {
+    "seed": 724,
+    "in_c": 326,
+    "nicht_in_c": 174,
+    "faelle_aussen": 174,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 725,
+    "in_c": 334,
+    "nicht_in_c": 166,
+    "faelle_aussen": 166,
+    "faelle_innen": 2,
+    "austritt": 2,
+    "randlauf": 0
+   }
+  ],
+  "q_i_r01:2": [
+   {
+    "seed": 716,
+    "in_c": 349,
+    "nicht_in_c": 151,
+    "faelle_aussen": 151,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 717,
+    "in_c": 346,
+    "nicht_in_c": 154,
+    "faelle_aussen": 154,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 718,
+    "in_c": 352,
+    "nicht_in_c": 148,
+    "faelle_aussen": 148,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 719,
+    "in_c": 333,
+    "nicht_in_c": 167,
+    "faelle_aussen": 167,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 720,
+    "in_c": 348,
+    "nicht_in_c": 152,
+    "faelle_aussen": 152,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 721,
+    "in_c": 347,
+    "nicht_in_c": 153,
+    "faelle_aussen": 153,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 722,
+    "in_c": 349,
+    "nicht_in_c": 151,
+    "faelle_aussen": 151,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 723,
+    "in_c": 350,
+    "nicht_in_c": 150,
+    "faelle_aussen": 150,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 724,
+    "in_c": 326,
+    "nicht_in_c": 174,
+    "faelle_aussen": 174,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   },
+   {
+    "seed": 725,
+    "in_c": 334,
+    "nicht_in_c": 166,
+    "faelle_aussen": 166,
+    "faelle_innen": 0,
+    "austritt": 0,
+    "randlauf": 0
+   }
+  ]
+ }
+}
