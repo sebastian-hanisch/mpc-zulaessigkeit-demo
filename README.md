@@ -1,7 +1,6 @@
 # MPC-Zulässigkeit – wann bleibt das Problem lösbar – Streamlit-Demo
 
-<!-- TODO nach dem Deploy: direkt hierher den Live-Link setzen (Leerzeile davor und danach):
-**[→ Demo live ausprobieren](https://sebastianhanisch-mpc-zulaessigkeit-demo.streamlit.app/)** -->
+**[→ Demo live ausprobieren](https://sebastianhanisch-mpc-zulaessigkeit-demo.streamlit.app/)**
 
 Diese Demo gehört zum Thema **Regelung (von LQR bis MPC)** auf der Website „Sebastian Hanisch – Operations Research und Machine Learning“. Sie setzt MPC als QP mit Stellgrenzen voraus
 ([`mpc-stellgrenzen-demo`](https://github.com/sebastian-hanisch/mpc-stellgrenzen-demo)) und hebt dort eine Annahme auf: Mit **Zustandsgrenzen** neben der Stellgrenze kann das Optimierungsproblem eines Takts lösbar und das des nächsten unlösbar sein.
