@@ -2,10 +2,9 @@
 
 Ein Polytop ist eine Liste von Ungleichungen `a1·x1 + a2·x2 ≤ b` (Tupel aus drei Brüchen). Alle Operationen sind exakt:
 Vorbild (Urbild unter x⁺ = A x + B u, |u| ≤ u_max) per Fourier-Motzkin-Elimination der einen Stellgröße, Ecken per Aufzählung
-der Schnittpunkte je zweier Geraden, überflüssige Ungleichungen über die Ecken. Das Modul ist eine Neuschreibung nach dem Muster
-der Vormessung (`rg_v16_poly.py` im Planungsordner der Linie, nur gelesen, nicht importiert); nur Standardbibliothek.
+der Schnittpunkte je zweier Geraden, überflüssige Ungleichungen über die Ecken. Das Modul ist neu geschrieben, nicht aus einem anderen Projekt importiert; nur Standardbibliothek.
 
-Entartete Mengen (Punkt, Strecke) bleiben erhalten: `prune` entfernt dort nichts, sonst gingen die Gleichungen verloren. Die Vormessung fand
+Entartete Mengen (Punkt, Strecke) bleiben erhalten: `prune` entfernt dort nichts, sonst gingen die Gleichungen verloren. Eine frühere Fassung hatte
 genau diesen Fehler (das Vereinfachen warf die Gleichungen weg, K_N({0}) hatte Fläche 0 bis N = 13); `tests/test_poly.py` hält den
 Regressionstest „K_2({0}) hat Fläche 1“.
 """

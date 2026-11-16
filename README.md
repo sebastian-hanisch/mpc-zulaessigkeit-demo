@@ -3,11 +3,11 @@
 <!-- TODO nach dem Deploy: direkt hierher den Live-Link setzen (Leerzeile davor und danach):
 **[→ Demo live ausprobieren](https://sebastianhanisch-mpc-zulaessigkeit-demo.streamlit.app/)** -->
 
-Stück 7 der Linie **Regelung (von LQR bis MPC)** in der „Konzepte“-Reihe für die Website „Sebastian Hanisch – Operations Research und Machine Learning“. Die Demo setzt MPC als QP mit Stellgrenzen voraus
-([`mpc-stellgrenzen-demo`](https://github.com/sebastian-hanisch/mpc-stellgrenzen-demo), Stück 5) und hebt dort eine Annahme auf: Mit **Zustandsgrenzen** neben der Stellgrenze kann das Optimierungsproblem eines Takts lösbar und das des nächsten unlösbar sein.
-Vehikel ist der **Wagen** (Doppelintegrator, Taktzeit 1) mit Stellgrenze und Zustandsgrenzen, dazu ein **Skalar** von Hand. Nachbarn in der Linie: [`horizont-falle-demo`](https://github.com/sebastian-hanisch/horizont-falle-demo) (dort die *Stabilität* bei endlichem Horizont; hier die *Zulässigkeit*),
+Diese Demo gehört zum Thema **Regelung (von LQR bis MPC)** auf der Website „Sebastian Hanisch – Operations Research und Machine Learning“. Sie setzt MPC als QP mit Stellgrenzen voraus
+([`mpc-stellgrenzen-demo`](https://github.com/sebastian-hanisch/mpc-stellgrenzen-demo)) und hebt dort eine Annahme auf: Mit **Zustandsgrenzen** neben der Stellgrenze kann das Optimierungsproblem eines Takts lösbar und das des nächsten unlösbar sein.
+Vehikel ist der **Wagen** (Doppelintegrator, Taktzeit 1) mit Stellgrenze und Zustandsgrenzen, dazu ein **Skalar** von Hand. Nachbarn zum Thema Regelung: [`horizont-falle-demo`](https://github.com/sebastian-hanisch/horizont-falle-demo) (dort die *Stabilität* bei endlichem Horizont; hier die *Zulässigkeit*),
 [`windup-pi-demo`](https://github.com/sebastian-hanisch/windup-pi-demo) (Sättigung beim PI-Regler), [`offsetfrei-demo`](https://github.com/sebastian-hanisch/offsetfrei-demo) (Beschränkungen im Beharrungszustand) und
-[`regelung-verzug-demo`](https://github.com/sebastian-hanisch/regelung-verzug-demo) (eine Periode Verzug ändert die Gebiete; hier ohne Verzug). Aus den Schwesterlinien: [`lager-lieferzeit-demo`](https://github.com/sebastian-hanisch/lager-lieferzeit-demo) und
+[`regelung-verzug-demo`](https://github.com/sebastian-hanisch/regelung-verzug-demo) (eine Periode Verzug ändert die Gebiete; hier ohne Verzug). Aus verwandten Themen: [`lager-lieferzeit-demo`](https://github.com/sebastian-hanisch/lager-lieferzeit-demo) und
 [`meldeverzug-demo`](https://github.com/sebastian-hanisch/meldeverzug-demo) (Rückkopplung am Lager, ohne Beschränkungsgebiete); [`lager-chaos-demo`](https://github.com/sebastian-hanisch/lager-chaos-demo) klemmt die Bestellung wie hier die Stellgröße, misst aber Chaos statt Zulässigkeit.
 Anwendungen mit Zustandsgleichung und Grenzen ohne rollierende Rückkopplung: [`battery-arbitrage-demo`](https://github.com/sebastian-hanisch/battery-arbitrage-demo) und [`energiefahrweise-demo`](https://github.com/sebastian-hanisch/energiefahrweise-demo).
 
@@ -15,9 +15,9 @@ Anwendungen mit Zustandsgleichung und Grenzen ohne rollierende Rückkopplung: [`
 
 MPC wendet in jedem Takt nur die erste Stellgröße der optimalen Folge an und rechnet im nächsten Takt neu. Ob das Problem im nächsten Takt noch eine Lösung hat, hängt nicht nur am heutigen Zustand, sondern an der Zukunft:
 **Welche Zustände sind lösbar, welche lassen sich für immer im Kasten halten, fällt eine Bahn heraus, und was verhindert eine Terminalmenge und was kostet sie?**
-Am Wagen mit |u| ≤ 1/2 und |xᵢ| ≤ 5 ist der Zustand (−4,5; 3) mit Horizont 3 lösbar, liegt aber außerhalb der Menge C der für immer haltbaren Zustände; der Regler fährt zwei Takte und scheitert bei (1; 2), weil dort schon die kleinste mögliche Position 11/2 über der Grenze 5 liegt (B2).
+Am Wagen mit |u| ≤ 1/2 und |xᵢ| ≤ 5 ist der Zustand (−4,5; 3) mit Horizont 3 lösbar, liegt aber außerhalb der Menge C der für immer haltbaren Zustände; der Regler (Q = P = I, R = 10) fährt zwei Takte und scheitert bei (1; 2), weil dort schon die kleinste mögliche Position 11/2 über der Grenze 5 liegt (B2); ob er dorthin fährt, entscheiden die Kosten (B5, B6).
 Das Gebiet der lösbaren Zustände schrumpft mit dem Horizont auf C (Fläche 100 bei N = 0, 37,29 bei N = 6; ab N = 6 gleich, B1). Ab N = 7 führt kein zulässiger erster Schritt mehr aus C hinaus, **unabhängig von den Kosten** (exakt, B4); darunter entscheiden die Kosten (B5, B6).
-Eine steuerinvariante Terminalmenge macht die Lösbarkeit zur Garantie, kostet aber Horizont: Die LQR-Terminalmenge (R = 1) deckt C erst bei N = 9 ab (B7). Alle Zahlen sind **eigene Nachrechnung in diesem Modell, bei diesen Grenzen und Kosten**; die Begriffe stehen in der Lehrbuchliteratur, eine Neuheitsaussage gibt es nicht.
+Eine steuerinvariante Terminalmenge macht die Lösbarkeit zur Garantie, kostet aber Horizont: Die LQR-Terminalmenge (R = 1) deckt C erst bei N = 9 ab (B7); gezählt fällt auf K_N für N = 1 bis 10 kein Start heraus (B8). Alle Zahlen sind **eigene Nachrechnung in diesem Modell, bei diesen Grenzen und Kosten**; die Begriffe stehen in der Lehrbuchliteratur, eine Neuheitsaussage gibt es nicht.
 
 ## Modell
 
@@ -76,21 +76,21 @@ Alle Zahlen: in diesem Modell, bei |u| ≤ 1/2, |xᵢ| ≤ 5 (wo nichts anderes 
 | 2 von 500 bei N = 6, neun von zehn Zufalls-Seeds | `test_claims::test_b6_*`, `test_eigenschaften::test_at_N_6_*` | Messung (Datei), Zeuge im Test |
 | Zeit je Eingabe | – | Messung dieser README, nicht im Test (die Tests prüfen nur, dass die Maximalstellungen durchlaufen) |
 
-### Befunde und Korrekturen gegenüber dem Plan
+### Abweichungen gegenüber den ersten Überschlagsrechnungen
 
-- **Andere Startzustände, gleiche Aussagen.** Die Vormessung zog die Startzustände mit `numpy.random`, der Bau mit SplitMix64 (Zufalls-Seed 716); die Zählungen verschieben sich: außerhalb von C 235; 151; 60; 14; 3 (Plan 245; 158; 64; 19; 3), Starts in C 265; 349; 440; 486; 497; 500 (Plan 255; 342; 436; 481; 497; 500), „nur Stellaufwand“ 260; 228; 102; 18; 0 (Plan 252; 217; 107; 12; 0),
-  „zur Grenze treibend“ 260; 340; 323; 209; 48; 2; 0 (Plan 252; 332; 314; 206; 53; 0). Vormessungszahlen sind Erwartungen; hier stehen die Zahlen des Baus. Bei Q = I und N = 1 sind es 2 (R = 0,1) und 201 von 265 (R = 10) statt 3 und 187 von 255.
-- **N = 6: Austritt beobachtet.** Der Plan nannte ihn „nicht beobachtet, nur exakt möglich“. Mit den Startzuständen des Baus tritt er bei „zur Grenze treibenden“ Kosten auf (B6); die exakte Aussage (Fläche 1/168) bleibt, die Beobachtung kommt hinzu. Bei den Standardgrenzen bleibt die Garantie „ab N = 7“ unverändert; für N = 6 sagt die Demo dort nicht „Garantie“. Bei Grenzen, bei denen die Austrittsfläche schon bei N = N̄ gleich 0 ist (B4), sagt sie das auch so.
-- **„Nur Position“ bei N = 2.** Der Plan nannte 2 Austritte bei N = 2 als Ausnahme; mit Zufalls-Seed 716 sind es 0, bei zehn Zufalls-Seeds in sechs 1 bis 4 (B5). Die Ausnahme gilt also, aber nicht für jeden Zufalls-Seed.
-- **Randläufe bei N ≥ 6.** Der Plan hatte Randläufe für N ≥ 6 bei „zur Grenze treibend“ vermerkt; im Bau sind es bei N = 6 498, bei N = 7 und 8 alle 500 Starts. Die beiden Austritte bei N = 6 (B6) liegen mit 0,0009 und 0,0094 deutlich über der Schwelle 10⁻⁶ der Austrittsprüfung, sind also kein Rundungsrand.
-- **Skalar, „Kosten, die x₁ = 5/2 bevorzugen“.** Der Plan nannte keine Kosten. Im Bau: Q = 0, R = 0,1, P_f = 0 und ein linearer Anteil −x gibt x₁ = 5/2 (gemessen); hier gilt „wählt der Regler es“ nur für diese Kosten und R = 0,1 (gemessen: x₁ = 2,5 bei R = 0,1, aber nur 2,2 bei R = 0,5 und 2,07 bei R = 1,5; Handrechnung zu x₀ = 1 in B3).
-- **Layout.** Stellgrenze und Kasten stehen als Einstellungen in der Seitenleiste und gelten für die Experimente 2 bis 5 (der Plan hatte sie je Experiment); die Kernfragen stehen nach den fünf Experimenten, vor „Wo die Annahmen enden“.
+- **Andere Startzustände, gleiche Aussagen.** Eine erste Rechnung zog die Startzustände mit `numpy.random`, die Demo nutzt SplitMix64 (Zufalls-Seed 716); die Zählungen verschieben sich: außerhalb von C 235; 151; 60; 14; 3 (erste Rechnung 245; 158; 64; 19; 3), Starts in C 265; 349; 440; 486; 497; 500 (erste Rechnung 255; 342; 436; 481; 497; 500), „nur Stellaufwand“ 260; 228; 102; 18; 0 (erste Rechnung 252; 217; 107; 12; 0),
+  „zur Grenze treibend“ 260; 340; 323; 209; 48; 2; 0 (erste Rechnung 252; 332; 314; 206; 53; 0). Zahlen aus einer ersten Rechnung sind nur Erwartungen; in der Tabelle stehen die Zahlen der Demo. Bei Q = I und N = 1 sind es 2 (R = 0,1) und 201 von 265 (R = 10) statt 3 und 187 von 255.
+- **N = 6: Austritt beobachtet.** Eine erste Rechnung fand ihn „nicht beobachtet, nur exakt möglich“. Mit den Startzuständen der Demo tritt er bei „zur Grenze treibenden“ Kosten auf (B6); die exakte Aussage (Fläche 1/168) bleibt, die Beobachtung kommt hinzu. Bei den Standardgrenzen bleibt die Garantie „ab N = 7“ unverändert; für N = 6 sagt die Demo dort nicht „Garantie“. Bei Grenzen, bei denen die Austrittsfläche schon bei N = N̄ gleich 0 ist (B4), sagt sie das auch so.
+- **„Nur Position“ bei N = 2.** Eine erste Rechnung fand 2 Austritte bei N = 2 als Ausnahme; mit Zufalls-Seed 716 sind es 0, bei zehn Zufalls-Seeds in sechs 1 bis 4 (B5). Die Ausnahme gilt also, aber nicht für jeden Zufalls-Seed.
+- **Randläufe bei N ≥ 6.** Eine erste Rechnung hatte Randläufe für N ≥ 6 bei „zur Grenze treibend“ vermerkt; hier sind es bei N = 6 498, bei N = 7 und 8 alle 500 Starts. Die beiden Austritte bei N = 6 (B6) liegen mit 0,0009 und 0,0094 deutlich über der Schwelle 10⁻⁶ der Austrittsprüfung, sind also kein Rundungsrand.
+- **Skalar, „Kosten, die x₁ = 5/2 bevorzugen“.** Eine erste Rechnung nannte keine Kosten. Hier: Q = 0, R = 0,1, P_f = 0 und ein linearer Anteil −x gibt x₁ = 5/2 (gemessen); hier gilt „wählt der Regler es“ nur für diese Kosten und R = 0,1 (gemessen: x₁ = 2,5 bei R = 0,1, aber nur 2,2 bei R = 0,5 und 2,07 bei R = 1,5; Rechnung von Hand zu x₀ = 1 in B3).
+- **Layout.** Stellgrenze und Kasten stehen als Einstellungen in der Seitenleiste und gelten für die Experimente 2 bis 5; die Kernfragen stehen nach den fünf Experimenten, vor „Wo die Annahmen enden“.
 - **Terminalexperiment: höchstens 500 Starts** (Rechenzeit); die vorgerechnete Tabelle (B8) hat 500.
-- **Nicht genannt:** Die Zahl der Regionen des Regelgesetzes in Beispiel 12.3 der Quelle ist in der Vormessung nicht bestätigt worden (keine Zählweise ergab die Quellenzahlen); die Demo nennt sie nicht und sagt nicht, dass sie Beispiel 12.3 bestätigt. <!-- lint-ok: dezimalpunkt -->
+- **Nicht genannt:** Die Zahl der Regionen des Regelgesetzes in Beispiel 12.3 der Quelle ließ sich bei der Nachrechnung nicht bestätigen (keine Zählweise ergab die Zahlen der Quelle); die Demo nennt sie nicht und sagt nicht, dass sie Beispiel 12.3 bestätigt. <!-- lint-ok: dezimalpunkt -->
 
 ## Quellen
 
-Aus dem Quellenbericht der Linie übernommen, **hier nicht erneut im Wortlaut gelesen**; die Gleichungen und Befunde stehen in eigenen Worten.
+Aus einem Quellenbericht übernommen, **hier nicht erneut im Wortlaut gelesen**; die Gleichungen und Befunde stehen in eigenen Worten.
 
 - Borrelli, Bemporad, Morari, *Predictive Control for Linear and Hybrid Systems*, Fassung vom 26.10.2016: Kap. 12.3 (S. 251–253) zur dauerhaften Zulässigkeit (Lemma 12.1 und 12.2, Satz 12.1, Folgerungen 12.1 und 12.2); Beispiel 12.1 (S. 247–248): Doppelintegrator mit N = 3, P = Q = I, R = 10, |u| ≤ 0,5, |xᵢ| ≤ 5 ohne Terminalmenge, <!-- lint-ok: dezimalpunkt -->
   aus (−4,5; 2) konvergiert die Bahn, aus (−4,5; 3) bricht sie ab (die Demo rechnet es nach, B2); Beispiel 12.2 (S. 248–251): instabiles System, nur die Mengen sind nachgerechnet (B10), die Aussage zu „jedem Anfangszustand“ nicht. <!-- lint-ok: dezimalpunkt -->
@@ -107,7 +107,7 @@ Aus dem Quellenbericht der Linie übernommen, **hier nicht erneut im Wortlaut ge
 - **Randlauf.** Bei Kosten, die an den Rand treiben, entscheidet das QP dort bei 10⁻⁹ nicht mehr; diese Bahnen sind gezählt, nicht als Fall oder Nichtfall gewertet (bei „zur Grenze treibend“ ab N = 6 fast alle).
 - **Lösbarkeit ist nicht Stabilität.** Ohne Terminalmenge ist die Konvergenz nur gezählt (bei Q = I und N ≥ 2 konvergieren alle Starts in C, 349 bis 500 je nach N), nicht begründet ([`horizont-falle-demo`](https://github.com/sebastian-hanisch/horizont-falle-demo) behandelt die Stabilität). Mit Terminalmenge ist die Lösbarkeit garantiert; die Konvergenz zählt die Demo (B8).
 - **Terminalmengen** nur LQR-invariant (auf drei Stellen gerundeter Gewinn, damit exakt) und {0}; keine ellipsoide Menge.
-- **Die Lesart der Zustandsgrenze bei x_N** (hier: x_N im Kasten, wie in der Vormessung) und die Zählweise des Determiniertheitsindex der Quelle sind für einen Vergleich mit anderen Beispielen der Quelle nicht geklärt.
+- **Die Lesart der Zustandsgrenze bei x_N** (hier: x_N im Kasten) und die Zählweise des Determiniertheitsindex der Quelle sind für einen Vergleich mit anderen Beispielen der Quelle nicht geklärt.
 - **Mit Stufen statt Reglern.** Stellgrenze und Kasten gibt es nur in den Stufen der App (u_max 1/4 bis 5, Kasten 5 oder 10); andere Werte sind im Code möglich, aber nicht gemessen.
 - **Keine Rechenzeit festgeschrieben.** Die Zeiten der Methodik sind eine Messung auf dem Entwicklungsrechner.
 
@@ -174,4 +174,4 @@ Gebaut mit Streamlit, Plotly, NumPy und SciPy.
 
 ---
 
-Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). Mehr zu den Demos: [Interaktive Demos](https://sebastianhanisch.net/demos.html).
+Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). Mehr zur Reihe: [Regelung von LQR bis MPC: vom Plan zur Regel](https://sebastianhanisch.net/konzepte-regelung.html).

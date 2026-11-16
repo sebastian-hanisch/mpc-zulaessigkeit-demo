@@ -3,11 +3,11 @@
 Löser: min ½ UᵀH U + fᵀU unter C U ≤ d mit H positiv definit, über die Dualform (Lawson und Hanson, „Least distance programming“ per NNLS):
 H = L Lᵀ, M = C L⁻ᵀ, b = d + M L⁻¹ f; gesucht ist die Lösung z kleinster Norm von M z ≤ b, danach U = L⁻ᵀ (z − L⁻¹ f). Die Dualform löst
 `scipy.optimize.nnls` (aktive Menge, endlich). Das ist ein eigener, kleiner Löser, kein Hochleistungslöser; er ist gegen die KKT-Bedingungen und gegen
-Aufzählung der Aktivmengen geprüft (`tests/test_oracle_qp.py`). Neu geschrieben nach dem Muster der Vormessung `rg_v16_qp.py` (nur gelesen).
+Aufzählung der Aktivmengen geprüft (`tests/test_oracle_qp.py`).
 
 Das Problem: x_(k+1) = A x_k + B u_k, Kosten Σ_(k<N) (x_kᵀ Q x_k + R u_k²) + x_NᵀP_f x_N (+ linearer Anteil Σ_(k=1..N) wᵀ x_k),
 Nebenbedingungen |u_k| ≤ u_max (k < N), |x_k,i| ≤ s_i für die vorhergesagten Zustände k = 1 … N (der Anfangszustand zählt nicht; in dieser Lesart
-reproduziert die Vormessung die Quelle Borrelli/Bemporad/Morari, Beispiel 12.1) und optional x_N ∈ X_f (Ungleichungen a·x_N ≤ b)."""
+reproduziert die Demo die Quelle Borrelli/Bemporad/Morari, Beispiel 12.1) und optional x_N ∈ X_f (Ungleichungen a·x_N ≤ b)."""
 
 from dataclasses import dataclass
 

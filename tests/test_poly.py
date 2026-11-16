@@ -69,7 +69,7 @@ def test_hand_example_states():
 
 
 def test_terminal_set_zero_gives_the_parallelogram_of_area_one():
-    """Regressionstest: K_2({0}) = {|x₁ + 2x₂| ≤ 1/2, |x₁ + x₂| ≤ 1/2} hat die Fläche 1 (in der Vormessung warf das Vereinfachen die Gleichungen weg, Fläche 0 bis N = 13)."""
+    """Regressionstest: K_2({0}) = {|x₁ + 2x₂| ≤ 1/2, |x₁ + x₂| ≤ 1/2} hat die Fläche 1 (eine erste Rechnung warf beim Vereinfachen die Gleichungen weg, Fläche 0 bis N = 13)."""
     zero = P.box(0)
     k1 = P.step_back(zero, P.box(5), A_EX, B_EX, F(1, 2))
     assert P.area_of(k1) == 0                                   # K_1({0}) ist eine Strecke

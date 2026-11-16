@@ -1,4 +1,4 @@
-"""Konstanten: Modell, Reglergrenzen, Kosten, Presets, Farben (Stück 7 der Linie „Regelung“: Zulässigkeit).
+"""Konstanten: Modell, Reglergrenzen, Kosten, Presets, Farben (Thema Regelung: Zulässigkeit).
 
 Modell des Wagens: x⁺ = A x + B u mit A = [[1, 1], [0, 1]], B = (0; 1) (Doppelintegrator, Ts = 1). Handbeispiel: der Skalar x⁺ = 2 x + u.
 Zufall nur über `mzl_rng.SplitMix64` (ganzzahlig, plattformfest)."""

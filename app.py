@@ -1,7 +1,7 @@
 """MPC-Zulässigkeit – wann bleibt das Problem lösbar – interaktive Konzept-Demo
 Sebastian Hanisch - Operations Research und Machine Learning
 
-Stück 7 der Linie „Regelung (von LQR bis MPC)“: der Wagen (Doppelintegrator) mit Stellgrenze und Zustandsgrenzen, dazu ein Skalar von Hand.
+Zum Thema „Regelung (von LQR bis MPC)“: der Wagen (Doppelintegrator) mit Stellgrenze und Zustandsgrenzen, dazu ein Skalar von Hand.
 Gebiete exakt mit Brüchen (mzl_poly.py, mzl_regions.py), Regelkreis mit eigenem QP-Löser (mzl_qp.py, mzl_loop.py); alles eigene Nachrechnung in diesem Modell.
 
 Lauffähig mit: streamlit run app.py
@@ -82,7 +82,7 @@ st.markdown(
     """
 **MPC** löst in jedem Takt ein Optimierungsproblem und wendet nur die erste Stellgröße an. Gibt es neben der Stellgrenze auch **Zustandsgrenzen**, kann das Problem in einem Takt **lösbar** und im
 nächsten **unlösbar** sein. Die Demo zeigt am Wagen (Doppelintegrator) und an einem Skalar von Hand, **welche Zustände lösbar sind und welche sich für immer im Kasten halten lassen (die Menge C)**,
-ob die Regelung einen Verlust hätte verhindern können und **was eine Terminalmenge** davon verhindert und kostet. Das Stück setzt MPC als QP mit Stellgrenzen voraus
+ob die Regelung einen Verlust hätte verhindern können und **was eine Terminalmenge** davon verhindert und kostet. Die Demo setzt MPC als QP mit Stellgrenzen voraus
 ([mpc-stellgrenzen-demo](https://github.com/sebastian-hanisch/mpc-stellgrenzen-demo)); alle Zahlen sind **eigene Nachrechnung in diesem Modell, bei diesen Grenzen und Kosten**.
 
 Weiter unten: fünf Experimente (🔬), die **Kernfragen** mit Antworten, der Abschnitt **🚧 Wo die Annahmen enden** und der Expander **📐 Mathematische Formulierung**.
@@ -326,7 +326,7 @@ $f_N > 1$ für jedes $N$: eine endliche Determiniertheit gibt es nicht. Für $x_
 
 **QP-Löser.** Die Demo löst das Problem über die Dualform (kleinster Abstand, Lawson und Hanson) mit `scipy.optimize.nnls`; er ist gegen die KKT-Bedingungen und die Aufzählung aller Aktivmengen geprüft.
 
-**Quellen** (aus dem Quellenbericht der Linie übernommen, hier nicht erneut im Wortlaut gelesen): Borrelli, Bemporad, Morari, *Predictive Control for Linear and Hybrid Systems*, Fassung vom 26.10.2016,
+**Quellen** (aus einem Quellenbericht übernommen, hier nicht erneut im Wortlaut gelesen): Borrelli, Bemporad, Morari, *Predictive Control for Linear and Hybrid Systems*, Fassung vom 26.10.2016,
 Kap. 12.3 (S. 251–253; Lemma 12.1 und 12.2, Satz 12.1, Folgerung 12.1 und 12.2) und Beispiele 12.1 und 12.2 (S. 247–251). Rawlings, Mayne, Diehl, *Model Predictive Control: Theory, Computation, and Design*, 2. Aufl., <!-- lint-ok: dezimalpunkt -->
 Kap. 2.3 (S. 111–112) und Kap. 2.6 (S. 147) zur rekursiven Lösbarkeit und zur Terminalmenge. Die Messungen dieser Demo sind eigene Rechnung; der Befund „Austritt aus C ab $\bar N + 1$ unmöglich“ ist eigene Nachrechnung
 in diesem Modell, die Quelle formuliert ihn über den Determiniertheitsindex, ob mit gleicher Zählung, ist offen.
@@ -337,5 +337,5 @@ st.markdown("---")
 st.caption(
     "Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – "
     "Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). "
-    "Mehr zu den Demos: [Interaktive Demos](https://sebastianhanisch.net/demos.html)."
+    "Mehr zur Reihe: [Regelung von LQR bis MPC: vom Plan zur Regel](https://sebastianhanisch.net/konzepte-regelung.html)."
 )

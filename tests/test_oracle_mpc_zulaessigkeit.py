@@ -135,7 +135,7 @@ def test_bbm_example_12_1_trajectories_against_slsqp(reg_main):
     # kein zulässiger Plan von (1; 2) aus: SLSQP findet ebenfalls keinen (Handrechnung: x₁(3) ≥ 11/2)
     assert _slsqp_step([1.0, 2.0], 3, I2, 10.0, I2, 0.5, 5.0) is None
     run2 = L.run_loop(prob, zul, np.array([-4.5, 2.0]), 12)
-    assert run2.status == "ende" and run2.traj[-1] == pytest.approx([-0.082, -0.040], abs=2e-3)         # Quelle und Vormessung: (−0,082; −0,040)
+    assert run2.status == "ende" and run2.traj[-1] == pytest.approx([-0.082, -0.040], abs=2e-3)         # Wert der Quelle: (−0,082; −0,040)
 
 
 def test_rounded_lqr_gains_against_dare():
