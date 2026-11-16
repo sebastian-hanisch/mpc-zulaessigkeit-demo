@@ -256,6 +256,10 @@ def verdict_falls(counts: dict, N: int, cost_key: str, umax, s1, s2) -> tuple:
         tail = " Die Gebietsfolge hat bis N = 60 kein Ende; eine Garantie gibt es nicht."
     elif N >= reg.n_bar + 1:
         tail = (f" Ab N = N̄ + 1 = {reg.n_bar + 1} ist ein Austritt aus C exakt unmöglich: Das Ziel des ersten Schritts, F_(N−1), ist schon C. Das gilt unabhängig von den Kosten.")
+    elif exit_area_for(umax, s1, s2, N) == 0:
+        # Die Fläche des Austrittsteils kann schon bei N = N̄ gleich 0 sein (bei einigen Grenzen); dann gibt es dort keinen Rest.
+        tail = (f" Bei N = {N} ist ein Austritt aus C schon exakt unmöglich (Fläche des Teils außerhalb 0), obwohl F_(N−1) noch größer als C ist; das gilt unabhängig von den Kosten. "
+                f"Gezählt wurden {c['austritt']} Austritte aus C.")
     elif N == reg.n_bar:
         ea = exit_area_for(umax, s1, s2, N)
         tail = (f" Bei N = N̄ = {reg.n_bar} gibt es einen Rest: Ein zulässiger erster Schritt kann C noch verlassen (Fläche des Teils außerhalb {fr(ea)} = {de(ea, 4)}); "
@@ -383,6 +387,8 @@ def answer_blame(counts: dict, N: int, cost_key: str, umax, s1, s2) -> tuple:
                   f"Dort ist der Zustand verloren, bevor der Regler losfährt.")
     if reg.n_bar is not None and N >= reg.n_bar + 1:
         garantie = f" Ab N = N̄ + 1 = {reg.n_bar + 1} ist ein Austritt aus C exakt unmöglich, unabhängig von den Kosten."
+    elif reg.n_bar is not None and exit_area_for(umax, s1, s2, N) == 0:
+        garantie = f" Bei diesen Grenzen ist ein Austritt aus C schon bei N = {N} exakt unmöglich (Fläche des Teils außerhalb 0), unabhängig von den Kosten."
     elif reg.n_bar is not None:
         garantie = f" Eine Garantie gibt es erst ab N = {reg.n_bar + 1}; darunter hängt es an den Kosten."
     else:

@@ -167,7 +167,7 @@ st.caption(f"Starts gleichmäßig in F_N (Ablehnungsverfahren, SplitMix64), Rege
 f1, f2, f3, f4 = st.columns([1, 2, 1, 1])
 wf_N = f1.slider("Horizont N", C.WF_N_MIN, C.WF_N_MAX, key="wf_N", help="Ab N = N̄ + 1 führt aus C kein zulässiger erster Schritt mehr hinaus (exakt).")
 wf_cost = f2.selectbox("Kosten", C.COST_KEYS, format_func=lambda k: C.COSTS[k]["label"], key="wf_cost",
-                       help="„Zur Grenze treibend“ ist absichtlich ungünstig gewählt: Ein linearer Anreiz −x₁ zieht die Bahn zur Positionsgrenze. Q = I mit R = 0,1 oder 10 ist gutartig.")
+                       help="„Zur Grenze treibend“ ist absichtlich ungünstig gewählt: Ein linearer Anreiz −x₁ zieht die Bahn zur Positionsgrenze. Q = I mit R = 0,1 oder 10 ist ab N = 2 gutartig (in den gezählten Läufen), bei N = 1 nicht.")
 wf_n = f3.slider("Zahl der Starts", C.WF_STARTS_MIN, C.WF_STARTS_MAX, step=C.WF_STARTS_STEP, key="wf_n", help="Gleichmäßig in F_N gezogen; je mehr Starts, desto länger die Rechnung.")
 wf_seed = f4.number_input("Zufalls-Seed", 0, C.SEED_MAX, key="wf_seed", step=1, help="Legt die Startzustände fest (SplitMix64). Die vorgerechnete Reihe unten gilt für den Standard-Zufalls-Seed.")
 f4.button("🎲 Neuer Zufalls-Seed", width="stretch", on_click=randomize_seed)
@@ -268,7 +268,7 @@ st.markdown(
 | **Harte Zustandsgrenzen.** | Bei weichen Grenzen mit Wiederherstellung nach Unlösbarkeit ist das Verhalten nicht gemessen; von Hand rechenbar ist nur das Mindestmaß der Überschreitung: Der Bremsweg von (−4,5; 3) endet bei Position 6, 1 über der Grenze 5. | – |
 | **Ein System, ein Kasten.** | Der Wagen (und ein Skalar) mit Rechteckgrenzen; andere Systeme (BBM Beispiel 12.2: keine endliche Determiniertheit bis N = 60) nur als Mengen gerechnet, nicht als Regelkreis. | – |
 | **Terminalmengen nur LQR-invariant (gerundeter Gewinn) und {0}.** | Keine ellipsoide Menge; andere Kostenformen (Mehrschritt-Gewichte, Endkosten ungleich P) nicht durchgespielt. | – |
-| **Lösbarkeit ist nicht Stabilität.** | Mit Terminalmenge ist die Lösbarkeit garantiert; dass die Bahn zum Ursprung läuft, zählt die Demo (500 von 500), begründet es hier nicht. | [horizont-falle-demo](https://github.com/sebastian-hanisch/horizont-falle-demo) |
+| **Lösbarkeit ist nicht Stabilität.** | Mit Terminalmenge ist die Lösbarkeit garantiert; dass die Bahn zum Ursprung läuft, zählt die Demo (500 von 500 Starts in K_N), begründet es hier nicht. | [horizont-falle-demo](https://github.com/sebastian-hanisch/horizont-falle-demo) |
 | **Keine Verzögerung.** | Eine Periode Rechenzeit macht den Zustand veraltet und ändert die Gebiete. | [regelung-verzug-demo](https://github.com/sebastian-hanisch/regelung-verzug-demo) |
 """
 )
@@ -314,7 +314,7 @@ die Folge exakt: Die Stellgröße $u$ wird aus den Ungleichungen eliminiert (Fou
 
 $$\bigl( A\,C + B\,[-u_{\max}, u_{\max}] \bigr) \cap F_{N-1} \not\subseteq C .$$
 
-Für $N \ge \bar N + 1$ ist $F_{N-1} = C$, die Menge links liegt dann in $C$: kein zulässiger erster Schritt führt hinaus, unabhängig von den Kosten. Für $N \le \bar N$ bleibt ein Rest, bei $N = \bar N$ (Standardgrenzen) mit der Fläche $1/168$.
+Für $N \ge \bar N + 1$ ist $F_{N-1} = C$, die Menge links liegt dann in $C$: kein zulässiger erster Schritt führt hinaus, unabhängig von den Kosten. Für $N < \bar N$ bleibt bei den Grenzen der App ein Rest; bei $N = \bar N$ nur bei einem Teil der Grenzen (Standardgrenzen: Fläche $1/168$), bei den übrigen ist die Fläche des Teils außerhalb von $C$ schon dort $0$.
 
 **Handbeispiel, Skalar.** Für $x^{+} = 2x + u$, $\lvert u\rvert \le 1$, $\lvert x\rvert \le 4$ ist $F_N = [-f_N, f_N]$ mit
 

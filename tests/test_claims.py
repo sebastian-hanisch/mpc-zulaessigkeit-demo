@@ -85,7 +85,9 @@ def test_b4_exit_areas():
     ea = R.exit_areas(reg, 8)
     assert [round(float(ea[n]), 3) for n in range(1, 6)] == [15.006, 12.131, 7.173, 2.214, 0.414]
     assert ea[6] == F(1, 168) and round(float(ea[6]), 4) == 0.0060 and ea[7] == ea[8] == 0
-    _readme_has("15,006; 12,131; 7,173; 2,214; 0,414", "**1/168 = 0,0060**", "**für N ≥ 7 gleich 0**", "3 000 Zufallspaare")
+    _readme_has("15,006; 12,131; 7,173; 2,214; 0,414", "**1/168 = 0,0060**", "**für N ≥ 7 gleich 0**", "3 000 Zufallspaare",
+                "Bei den Standardgrenzen kann ein zulässiger erster Schritt aus C hinausführen, solange N ≤ 6 ist", "Bei 6 der 20 Grenzkombinationen der App",
+                "N̄ = 9, Fläche 1/32 bei N = 8, 0 bei N = 9")        # die 6 Kombinationen selbst: test_verdicts::test_exit_area_at_n_bar_is_zero_*
 
 
 # --- B5 und B6 (Messung, vorgerechnet) --------------------------------------------------------------------------------------------------------

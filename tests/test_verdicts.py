@@ -102,6 +102,48 @@ def test_falls_branches():
     assert kind == "success" and "Ab N = N̄ + 1 = 7" in text
 
 
+ZERO_AT_N_BAR = [(0.25, 5.0, 5.0), (0.25, 5.0, 10.0), (0.25, 10.0, 5.0), (0.25, 10.0, 10.0), (0.5, 10.0, 5.0), (0.5, 10.0, 10.0)]     # 6 der 20 Grenzkombinationen
+
+
+def test_exit_area_at_n_bar_is_zero_for_exactly_six_of_twenty_limit_combinations():
+    """README B4: Bei 6 von 20 Grenzkombinationen ist die Austrittsfläche schon bei N = N̄ gleich 0, bei den übrigen 14 ist sie dort positiv (N < N̄ immer positiv)."""
+    zero = []
+    for u in C.UMAX_OPTIONS:
+        for s1 in (5.0, 10.0):
+            for s2 in (5.0, 10.0):
+                reg = R.regions(u, s1, s2)
+                ea = R.exit_areas(reg, reg.n_bar + 1)
+                assert all(ea[n] > 0 for n in range(1, reg.n_bar)) and ea[reg.n_bar + 1] == 0
+                if ea[reg.n_bar] == 0:
+                    zero.append((u, s1, s2))
+    assert sorted(zero) == sorted(ZERO_AT_N_BAR)
+    reg = R.regions(0.25, 5.0, 5.0)
+    ea = R.exit_areas(reg, 9)
+    assert reg.n_bar == 9 and ea[8] == F(1, 32) and ea[9] == 0
+
+
+@pytest.mark.parametrize("limits", ZERO_AT_N_BAR)
+def test_falls_verdict_at_n_bar_with_zero_exit_area_claims_no_rest(limits):
+    """Regression: Bei N = N̄ mit Austrittsfläche 0 sagte das Verdikt „Rest“ und nannte zugleich die Fläche 0; jetzt sagt es, dass ein Austritt schon dort unmöglich ist."""
+    u, s1, s2 = limits
+    reg = R.regions(u, s1, s2)
+    counts = {"starts": 500, "in_c": 500, "nicht_in_c": 0, "faelle": 0, "faelle_aussen": 0, "faelle_innen": 0, "austritt": 0, "konvergiert": 400, "randlauf": 0, "ende": 100}
+    kind, text = ev.verdict_falls(counts, reg.n_bar, "grenze", u, s1, s2)
+    assert "gibt es einen Rest" not in text and "kann C noch verlassen" not in text and "Eine Garantie gibt es erst" not in text
+    assert f"Bei N = {reg.n_bar} ist ein Austritt aus C schon exakt unmöglich (Fläche des Teils außerhalb 0)" in text and "unabhängig von den Kosten" in text
+    kind, text = ev.answer_blame(counts, reg.n_bar, "grenze", u, s1, s2)
+    assert f"schon bei N = {reg.n_bar} exakt unmöglich" in text and "Eine Garantie gibt es erst" not in text
+    kind, text = ev.verdict_falls(counts, reg.n_bar - 1, "grenze", u, s1, s2)                     # davor bleibt ein Rest
+    assert "kann ein zulässiger erster Schritt aus C hinausführen" in text and "exakt unmöglich" not in text
+
+
+def test_falls_verdict_example_quarter_limit_nine():
+    """Beispiel der Prüfung: u_max = 1/4, s₁ = s₂ = 5, N = 9 = N̄: kein „Rest“ bei Fläche 0."""
+    counts = {"starts": 500, "in_c": 500, "nicht_in_c": 0, "faelle": 0, "faelle_aussen": 0, "faelle_innen": 0, "austritt": 0, "konvergiert": 500, "randlauf": 0, "ende": 0}
+    kind, text = ev.verdict_falls(counts, 9, "grenze", 0.25, 5.0, 5.0)
+    assert "N = 9 ist ein Austritt aus C schon exakt unmöglich" in text and "Rest" not in text and "0,0000" not in text
+
+
 def test_preset_terminalmenge_verdict():
     v = _vals("Wagen mit Terminalmenge")
     ta = ev.analyse_terminal(v["tm_term"], v["tm_N"], v["umax"], v["s1"], v["s2"], v["wg_start"])
